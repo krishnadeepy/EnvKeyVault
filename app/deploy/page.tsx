@@ -55,9 +55,9 @@ const steps: {
 export default function Deploy() {
   return (
     <div className="container px-8 mx-auto mt-16 lg:mt-32 ">
-      <Title>Deploy EnvShare for Free</Title>
+      <Title>Deploy EnvKeyVault for Free</Title>
       <p className="mt-4 text-sm text-center text-zinc-600">
-        You can deploy your own hosted version of EnvShare, you just need an Upstash and Vercel account.
+        You can deploy your own hosted version of EnvKeyVault, you just need an Upstash and Vercel account.
       </p>
       <ol className="flex flex-col items-center justify-center mt-8 md:mt-16 xl:mt-24">
         {steps.map((step, stepIdx) => (
