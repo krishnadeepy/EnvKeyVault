@@ -1,14 +1,14 @@
 <div align="center">
-    <h1 align="center">EnvShare</h1>
+    <h1 align="center">EnvKeyVault</h1>
     <h5>Share Environment Variables Securely</h5>
 </div>
 
 <div align="center">
-  <a href="https://envshare-blond-nu.vercel.app">EnvShare</a>
+  <a href="https://env-key-vault.vercel.app.vercel.app">EnvKeyVault</a>
 </div>
 <br/>
 
-EnvShare is a simple tool to share environment variables securely. It uses
+EnvKeyVault is a simple tool to share environment variables securely. It uses
 **AES-GCM** to encrypt your data before sending it to the server. The encryption
 key never leaves your browser.
 
@@ -42,13 +42,13 @@ This endpoint is only meant to store **already encrypted** secrets. The
 encrypted secrets are stored in plain text.
 
 ```sh-session
-$ curl -XPOST -s https://envshare-blond-nu.vercel.app/api/v1/secret -d "already-encrypted-secret"
+$ curl -XPOST -s https://env-key-vault.vercel.app.vercel.app/api/v1/secret -d "already-encrypted-secret"
 ```
 
 You can add optional headers to configure the ttl and number of reads.
 
 ```sh-session
-$ curl -XPOST -s https://envshare-blond-nu.vercel.app/api/v1/secret -d "already-encrypted-secret" -H "envshare-ttl: 3600" -H "envshare-reads: 10"
+$ curl -XPOST -s https://env-key-vault.vercel.app.vercel.app.vercel.app/api/v1/secret -d "already-encrypted-secret" -H "envshare-ttl: 3600" -H "envshare-reads: 10"
 ```
 
 - Omitting the `envshare-ttl` header will set a default of 30 days. Disable the
@@ -65,7 +65,7 @@ This endpoint returns a JSON response with the secret id:
     "ttl": 86400,
     "reads": 2,
     "expiresAt": "2023-01-19T20:47:28.383Z",
-    "url": "https://envshare-blond-nu.vercel.app/api/v1/secret/HdPbXgpvUvNk43oxSdK97u"
+    "url": "https://env-key-vault.vercel.app.vercel.app/api/v1/secret/HdPbXgpvUvNk43oxSdK97u"
   }
 }
 ```
@@ -75,7 +75,7 @@ This endpoint returns a JSON response with the secret id:
 You need an id to retrieve a secret. The id is returned when you store a secret.
 
 ```sh-session
-$ curl -s https://envshare-blond-nu.vercel.app/api/v1/secret/HdPbXgpvUvNk43oxSdK97u
+$ curl -s https://env-key-vault.vercel.app.vercel.app/api/v1/secret/HdPbXgpvUvNk43oxSdK97u
 ```
 
 ```json
