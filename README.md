@@ -4,7 +4,7 @@
 </div>
 
 <div align="center">
-  <a href="https://env-key-vault.vercel.app.vercel.app">EnvKeyVault</a>
+  <a href="https://env-key-vault.vercel.app">EnvKeyVault</a>
 </div>
 <br/>
 
@@ -42,13 +42,13 @@ This endpoint is only meant to store **already encrypted** secrets. The
 encrypted secrets are stored in plain text.
 
 ```sh-session
-$ curl -XPOST -s https://env-key-vault.vercel.app.vercel.app/api/v1/secret -d "already-encrypted-secret"
+$ curl -XPOST -s https://env-key-vault.vercel.app/api/v1/secret -d "already-encrypted-secret"
 ```
 
 You can add optional headers to configure the ttl and number of reads.
 
 ```sh-session
-$ curl -XPOST -s https://env-key-vault.vercel.app.vercel.app.vercel.app/api/v1/secret -d "already-encrypted-secret" -H "envshare-ttl: 3600" -H "envshare-reads: 10"
+$ curl -XPOST -s https://env-key-vault.vercel.app/api/v1/secret -d "already-encrypted-secret" -H "envshare-ttl: 3600" -H "envshare-reads: 10"
 ```
 
 - Omitting the `envshare-ttl` header will set a default of 30 days. Disable the
@@ -65,7 +65,7 @@ This endpoint returns a JSON response with the secret id:
     "ttl": 86400,
     "reads": 2,
     "expiresAt": "2023-01-19T20:47:28.383Z",
-    "url": "https://env-key-vault.vercel.app.vercel.app/api/v1/secret/HdPbXgpvUvNk43oxSdK97u"
+    "url": "https://env-key-vault.vercel.app/api/v1/secret/HdPbXgpvUvNk43oxSdK97u"
   }
 }
 ```
@@ -75,7 +75,7 @@ This endpoint returns a JSON response with the secret id:
 You need an id to retrieve a secret. The id is returned when you store a secret.
 
 ```sh-session
-$ curl -s https://env-key-vault.vercel.app.vercel.app/api/v1/secret/HdPbXgpvUvNk43oxSdK97u
+$ curl -s https://env-key-vault.vercel.app/api/v1/secret/HdPbXgpvUvNk43oxSdK97u
 ```
 
 ```json
